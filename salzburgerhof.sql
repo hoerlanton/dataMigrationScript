@@ -1,27 +1,27 @@
 DELETE FROM CUSTOMER;
-DELETE FROM ROOM;
+DELETE FROM station;
 DELETE FROM LAYOUT;
 DELETE FROM DINING_TABLE;
 DELETE FROM POSITION;
 
 SELECT nextval('customer_id_seq');
-SELECT nextval('room_id_seq');
+SELECT nextval('station_id_seq');
 SELECT nextval('layout_id_seq');
 SELECT nextval('dining_table_id_seq');
 SELECT nextval('position_id_seq');
 
 SELECT SETVAL('customer_id_seq', 1, false);
-SELECT SETVAL('room_id_seq', 1, false);
+SELECT SETVAL('station_id_seq', 1, false);
 SELECT SETVAL('layout_id_seq', 1, false);
 SELECT SETVAL('dining_table_id_seq', 1, false);
 SELECT SETVAL('position_id_seq', 1, false);
 
 INSERT INTO customer (name) VALUES ('Salzburger Hof');
 
-INSERT INTO room (name, customer_id, length, width)
+INSERT INTO station (name, customer_id, length, width)
 VALUES ('sonnberg-zirbn', currval('customer_id_seq'), 800, 486);
 
-INSERT INTO layout (room_id) VALUES (currval('room_id_seq'));
+INSERT INTO layout (station_id) VALUES (currval('station_id_seq'));
 
 -- Table 40
 INSERT INTO dining_table (number, length, width, seats) VALUES ('040', 57, 40, 4);
@@ -123,10 +123,10 @@ INSERT INTO dining_table (number, length, width, seats) VALUES ('059', 40, 57, 2
 INSERT INTO position (layout_id, dining_table_id, x_position, y_position)
 VALUES (currval('layout_id_seq'), currval('dining_table_id_seq'), 253, 28);
 
-INSERT INTO room (name, customer_id, length, width)
+INSERT INTO station (name, customer_id, length, width)
 VALUES ('panorama', currval('customer_id_seq'), 800, 506);
 
-INSERT INTO layout (room_id) VALUES (currval('room_id_seq'));
+INSERT INTO layout (station_id) VALUES (currval('station_id_seq'));
 
 -- Table 60
 INSERT INTO dining_table (number, length, width, seats) VALUES ('060', 40, 57, 2);
@@ -278,10 +278,10 @@ INSERT INTO dining_table (number, length, width, seats) VALUES ('089', 57, 40, 2
 INSERT INTO position (layout_id, dining_table_id, x_position, y_position)
 VALUES (currval('layout_id_seq'), currval('dining_table_id_seq'), 0, 468);
 
-INSERT INTO room (name, customer_id, length, width)
+INSERT INTO station (name, customer_id, length, width)
 VALUES ('sportlerstube', currval('customer_id_seq'), 800, 342);
 
-INSERT INTO layout (room_id) VALUES (currval('room_id_seq'));
+INSERT INTO layout (station_id) VALUES (currval('station_id_seq'));
 
 -- Table 1
 INSERT INTO dining_table (number, length, width, seats) VALUES ('001', 102, 78, 4);
@@ -403,10 +403,10 @@ INSERT INTO dining_table (number, length, width, seats) VALUES ('024', 51, 78, 2
 INSERT INTO position (layout_id, dining_table_id, x_position, y_position)
 VALUES (currval('layout_id_seq'), currval('dining_table_id_seq'), 624, 188);
 
-INSERT INTO room (name, customer_id, length, width)
+INSERT INTO station (name, customer_id, length, width)
 VALUES ('wintergarten', currval('customer_id_seq'), 800, 504);
 
-INSERT INTO layout (room_id) VALUES (currval('room_id_seq'));
+INSERT INTO layout (station_id) VALUES (currval('station_id_seq'));
 
 -- Table 501
 INSERT INTO dining_table (number, length, width, seats) VALUES ('501', 39, 39, 4);
@@ -533,10 +533,10 @@ INSERT INTO dining_table (number, length, width, seats) VALUES ('525', 39, 39, 3
 INSERT INTO position (layout_id, dining_table_id, x_position, y_position)
 VALUES (currval('layout_id_seq'), currval('dining_table_id_seq'), 321, 85);
 
-INSERT INTO room (name, customer_id, length, width)
+INSERT INTO station (name, customer_id, length, width)
 VALUES ('terasse', currval('customer_id_seq'), 800, 1142);
 
-INSERT INTO layout (room_id) VALUES (currval('room_id_seq'));
+INSERT INTO layout (station_id) VALUES (currval('station_id_seq'));
 
 -- Table 527
 INSERT INTO dining_table (number, length, width, seats) VALUES ('527', 141, 55, 4);
